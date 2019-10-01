@@ -42,6 +42,19 @@ namespace Westwind.WebConnection
             return guid.ToString();
         }
 
+        public Session GetGuidOnObject()
+        {
+            var session = new Session() {Guid = Guid.NewGuid()};
+            return session;
+        }
+
+        public class Session
+        {
+            public Guid Guid { get; set; }
+        }
+
+
+
         public string GetValues(string inputString, decimal inputDecimal)
         {
             return inputString + " " + inputDecimal.ToString();
@@ -83,10 +96,17 @@ namespace Westwind.WebConnection
             return numbers;
         }
 
+        public long ReturnLong()
+        {
+            // 1000 trillion
+            return 1_000_000_000_000_001; 
+        }
+
         public char PassChar(char value)
         {
             return value;
         }
+
 
         public StructValue ReturnStruct(int intVal, string stringVal)
         {
